@@ -34,6 +34,11 @@ tracer = trace.get_tracer(__name__)
 
 
 app = Flask(__name__)
+
+# Initialize automatic instrumentation with Flask with HoneyComb
+FlaskInstrumentor().instrument_app(app)
+RequestsInstrumentor().instrument()
+
 frontend = os.getenv('FRONTEND_URL')
 backend = os.getenv('BACKEND_URL')
 origins = [frontend, backend]
@@ -44,9 +49,7 @@ cors = CORS(
   allow_headers="content-type,if-modified-since",
   methods="OPTIONS,GET,HEAD,POST"
 )
-# Initialize automatic instrumentation with Flask with HoneyComb
-FlaskInstrumentor().instrument_app(app)
-RequestsInstrumentor().instrument()
+
 
 @app.route("/api/message_groups", methods=['GET'])
 def data_message_groups():
