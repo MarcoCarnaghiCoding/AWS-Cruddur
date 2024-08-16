@@ -1,4 +1,5 @@
-flask
+flask == 2.2.2
+Werkzeug==2.2.2
 flask-cors
 opentelemetry-api 
 opentelemetry-sdk 
@@ -8,3 +9,6 @@ opentelemetry-instrumentation-requests
 
 aws-xray-sdk
 watchtower
+
+blinker 
+rollbar
