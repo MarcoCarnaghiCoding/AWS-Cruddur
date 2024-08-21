@@ -2,7 +2,7 @@ import './HomeFeedPage.css';
 import React from "react";
 
 
-
+import { Auth } from 'aws-amplify';
 
 
 import DesktopNavigation  from '../components/DesktopNavigation';
@@ -12,7 +12,7 @@ import ActivityForm from '../components/ActivityForm';
 import ReplyForm from '../components/ReplyForm';
 
 //  Authenication
-import { Auth } from 'aws-amplify';
+import Cookies from 'js-cookie'
 
 export default function HomeFeedPage() {
   const [activities, setActivities] = React.useState([]);

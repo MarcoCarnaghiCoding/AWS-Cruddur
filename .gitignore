@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 /docker/**/*
+/frontend-react-js/node-modules
 =======
 docker/**/*
 >>>>>>> main
